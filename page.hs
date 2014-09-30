@@ -1,3 +1,12 @@
+BTreePageHeader = BTreePageHeader { bTreePageType :: Word8
+                                  , firstFreeblockOffset :: Word16
+                                  , numberOfCells :: Word16
+                                  , cellContentOffset :: Word16
+                                  , numberFragments :: Word8
+                                  , rightMostPointer :: Word32 }
+
+
+
 LockBytePage =
 FreelistPage = Trunk | Leaf
 BTreePage = TableInterior | TableLeaf |
