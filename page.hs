@@ -1,15 +1,22 @@
-BTreePageHeader = BTreePageHeaderInterior { bTreePageType :: Word8
+module SQLPages where
+
+import Data.Word
+import Data.ByteString
+import Foreign.ForeignPtr
+
+data BTreePageHeader = BTreePageHeaderInterior { bTreePageType :: Word8
+                                              , firstFreeblockOffset :: Word16
+                                              , numberOfCells :: Word16
+                                              , cellContentOffset :: Word16
+                                              , numberFragments :: Word8
+                                              , rightMostPointer :: Word32 } |
+                      BTreePageHeaderLeaf { bTreePageType :: Word8
                                           , firstFreeblockOffset :: Word16
                                           , numberOfCells :: Word16
                                           , cellContentOffset :: Word16
-                                          , numberFragments :: Word8
-                                          , rightMostPointer :: Word32 } |
-                  BTreePageHeaderLeaf { bTreePageType :: Word8
-                                      , firstFreeblockOffset :: Word16
-                                      , numberOfCells :: Word16
-                                      , cellContentOffset :: Word16
-                                      , numberFragments :: Word8 }
+                                          , numberFragments :: Word8 }
 
+{-
 
 
 LockBytePage =
@@ -37,3 +44,5 @@ BTree
         An index b-tree leaf page 
     A payload overflow page
     A pointer map page 
+
+-}
