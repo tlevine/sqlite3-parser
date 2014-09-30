@@ -1,3 +1,17 @@
+LockBytePage =
+FreelistPage = Trunk | Leaf
+BTreePage = TableInterior | TableLeaf |
+            IndexInterior | IndexLeaf
+PayloadOverflowPage =
+PointerMapPage =
+
+
+
+
+Freelist
+BTree
+
+
     The lock-byte page
     A freelist page
         A freelist trunk page
