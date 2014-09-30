@@ -16,6 +16,14 @@ data BTreePageHeader = BTreePageHeaderInterior { bTreePageType :: Word8
                                           , cellContentOffset :: Word16
                                           , numberFragments :: Word8 }
 
+data BTreePage = BTreePage { databaseHeader :: Maybe DatabaseHeader
+                           , pageHeader :: BTreePageHeader
+                           , cellPointerArray :: ???
+                           , unallocatedSpace :: ???
+                           , cellContentArea ::
+                           , reservedRegion }
+
+
 {-
 
 
