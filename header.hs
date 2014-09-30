@@ -1,3 +1,12 @@
+module SQLDiskModel where
+
+import Data.Word
+import Data.ByteString
+import Foreign.ForeignPtr
+
+
+data LegacyOrWAL = Legacy | WAL
+
 data Header = Header { headerString :: ByteString
                      , databasePageSize :: Word32 -- Do we really need 32?
                      , fileFormatWriteVersion :: LegacyOrWAL
